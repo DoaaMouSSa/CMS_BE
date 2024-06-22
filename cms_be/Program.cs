@@ -1,5 +1,6 @@
-using cms_be.AuthService;
+using cms_be.AuthServices;
 using cms_be.DataContext;
+using cms_be.HeaderServices;
 using cms_be.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -29,6 +30,7 @@ builder.Services.Configure<IdentityOptions>(options =>
     options.Password.RequiredLength = 4;
 });
 builder.Services.AddTransient<IAuthService, AuthService>();
+builder.Services.AddTransient<IHeaderService, HeaderService>();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

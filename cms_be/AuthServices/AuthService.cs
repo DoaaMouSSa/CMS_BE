@@ -2,7 +2,7 @@
 using cms_be.Models;
 using Microsoft.AspNetCore.Identity;
 
-namespace cms_be.AuthService
+namespace cms_be.AuthServices
 {
     public class AuthService:IAuthService
     {

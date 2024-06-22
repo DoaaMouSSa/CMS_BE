@@ -1,6 +1,6 @@
 ﻿using cms_be.Models;
 
-namespace cms_be.AuthService
+namespace cms_be.AuthServices
 {
     public interface IAuthService
     {

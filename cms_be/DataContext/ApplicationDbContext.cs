@@ -1,4 +1,5 @@
 ﻿using cms_be.Models;
+using cms_be.Models.HeaderModels;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
@@ -10,5 +11,6 @@ namespace cms_be.DataContext
         {
 
         }
+      public DbSet<Header> tblHeader { get; set; }
     }
 }
