@@ -8,5 +8,6 @@ namespace cms_be.HeaderServices
         Task<Response<bool>> ChangeLogoImage(int id, string fileName);
         Task<Response<bool>> ChangeLogoName(HeaderDto headerDto);
         Task<Response<bool>> ChangePhone(HeaderDto headerDto);
+        Task<Response<Header>> GetData();
     }
 }

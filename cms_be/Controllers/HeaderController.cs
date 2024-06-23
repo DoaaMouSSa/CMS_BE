@@ -65,5 +65,18 @@ namespace cms_be.Controllers
 
             return Ok(result);
         }
+        [HttpGet("GetData")]
+        public async Task<IActionResult> GetData()
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var result = await _headerService.GetData();
+
+            if (!result.IsSuccess)
+                return BadRequest(result);
+
+            return Ok(result);
+        }
     }
 }

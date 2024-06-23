@@ -54,5 +54,20 @@ namespace cms_be.HeaderServices
             response.IsSuccess = true;
             return response;
         }
+
+        public async Task<Response<Header>> GetData()
+        {
+            Response<Header> response = new Response<Header>();
+            Header header = findById(1);//type is equal to header in the future work
+            header.LogoImage = "http://localhost:4220/Images/Header/" + header.LogoImage;
+            if (header !=null)
+            {
+                response.Payload = header;
+                response.Message = "تم تحميل بنجاح";
+                response.IsSuccess = true;
+            }
+           
+            return response;
+        }
     }
 }
