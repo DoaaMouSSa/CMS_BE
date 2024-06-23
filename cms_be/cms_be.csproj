@@ -22,8 +22,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\Images\Header\" />
     <Folder Include="wwwroot\Images\Banner\" />
+    <Folder Include="wwwroot\Images\Header\" />
   </ItemGroup>
 
 </Project>
