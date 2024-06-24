@@ -30,7 +30,7 @@ builder.Services.Configure<IdentityOptions>(options =>
     options.Password.RequiredLength = 4;
 });
 builder.Services.AddTransient<IAuthService, AuthService>();
-builder.Services.AddTransient<IHeaderService, HeaderService>();
+builder.Services.AddTransient<IContentService, ContentService>();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
