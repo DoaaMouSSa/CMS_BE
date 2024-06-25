@@ -8,7 +8,8 @@ namespace cms_be.HeaderServices
     {
         Task<Response<bool>> ChangeContent(Content content);
         //Task<Response<Content>> GetContentData();
-        Task<Response<Content>> GetHeaderData();
-        Task<Response<Content>> GetBannerData();
+        Task<Response<Content>> GetHeaderContent();
+        Task<Response<Content>> GetBannerContent();
+        Task<Response<Content>> GetHeroContent();
     }
 }

@@ -41,6 +41,11 @@ namespace cms_be.Controllers
                     imagePath = fileHandler.UploadImage(contentDto.File, "Banner");
 
                 }
+                else if (contentDto.ContentType == 3)
+                {
+                    imagePath = fileHandler.UploadImage(contentDto.File, "hero");
+
+                }
                 newContent.Heading = contentDto.Heading;
                     newContent.Text = contentDto.Text;
                     newContent.ImagePath = imagePath;
@@ -54,26 +59,39 @@ namespace cms_be.Controllers
             return Ok(result);
         }
      
-        [HttpGet("GetHeaderData")]
-        public async Task<IActionResult> GetHeaderData()
+        [HttpGet("GetHeadeContent")]
+        public async Task<IActionResult> GetHeadeContent()
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            var result = await _headerService.GetHeaderData();
+            var result = await _headerService.GetHeaderContent();
 
             if (!result.IsSuccess)
                 return BadRequest(result);
 
             return Ok(result);
         }
-        [HttpGet("GetBannerData")]
-        public async Task<IActionResult> GetBannerData()
+        [HttpGet("GetBannerContent")]
+        public async Task<IActionResult> GetBannerContent()
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            var result = await _headerService.GetBannerData();
+            var result = await _headerService.GetBannerContent();
+
+            if (!result.IsSuccess)
+                return BadRequest(result);
+
+            return Ok(result);
+        }
+        [HttpGet("GetHeroContent")]
+        public async Task<IActionResult> GetHeroContent()
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var result = await _headerService.GetHeroContent();
 
             if (!result.IsSuccess)
                 return BadRequest(result);

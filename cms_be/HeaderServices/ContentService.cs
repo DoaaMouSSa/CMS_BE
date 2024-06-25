@@ -31,7 +31,7 @@ namespace cms_be.HeaderServices
             return response;
         }
 
-        public async Task<Response<Content>> GetHeaderData()
+        public async Task<Response<Content>> GetHeaderContent()
         {
             Response<Content> response = new Response<Content>();
             Content content = findContentType(1);
@@ -45,10 +45,24 @@ namespace cms_be.HeaderServices
            
             return response;
         }
-        public async Task<Response<Content>> GetBannerData()
+        public async Task<Response<Content>> GetBannerContent()
         {
             Response<Content> response = new Response<Content>();
             Content content = findContentType(2);
+            content.ImagePath = "http://localhost:4220/Images/Header/" + content.ImagePath;
+            if (content != null)
+            {
+                response.Payload = content;
+                response.Message = "تم تحميل بنجاح";
+                response.IsSuccess = true;
+            }
+
+            return response;
+        }
+        public async Task<Response<Content>> GetHeroContent()
+        {
+            Response<Content> response = new Response<Content>();
+            Content content = findContentType(3);
             content.ImagePath = "http://localhost:4220/Images/Header/" + content.ImagePath;
             if (content != null)
             {
