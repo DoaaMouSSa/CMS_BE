@@ -49,7 +49,7 @@ namespace cms_be.HeaderServices
         {
             Response<Content> response = new Response<Content>();
             Content content = findContentType(2);
-            content.ImagePath = "http://localhost:4220/Images/Header/" + content.ImagePath;
+            content.ImagePath = "http://localhost:4220/Images/Banner/" + content.ImagePath;
             if (content != null)
             {
                 response.Payload = content;
@@ -63,7 +63,7 @@ namespace cms_be.HeaderServices
         {
             Response<Content> response = new Response<Content>();
             Content content = findContentType(3);
-            content.ImagePath = "http://localhost:4220/Images/Header/" + content.ImagePath;
+            content.ImagePath = "http://localhost:4220/Images/Hero/" + content.ImagePath;
             if (content != null)
             {
                 response.Payload = content;
